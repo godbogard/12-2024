@@ -9,7 +9,7 @@
 .grxgrprincp input[type="checkbox"]{display:none}
 .grxgrprincp input[type="checkbox"]:checked ~ .grxright{opacity: 1;pointer-events: auto;transform:translateY(0)}
 .grxgrprincp input[type="checkbox"]:checked ~ .grxtext{opacity: 1;pointer-events: auto;transform:translateX(0)}
-.grxchar0{font-family:"Roboto", serif;font-weight: 400;font-style: normal;position: absolute;top:91px;left:0px;font-size: 11px;text-transform: uppercase;letter-spacing: 3px;width: 100%;text-align: center;text-shadow: 1px 1px 0px rgba(0, 0, 0, 1)}
+.grxchar0{font-family:"Roboto", serif;font-weight: 400;font-style: normal;position: absolute;top:85px;left:0px;font-size: 11px;text-transform: uppercase;letter-spacing: 3px;width: 100%;text-align: center;text-shadow: 1px 1px 0px rgba(0, 0, 0, 1)}
 .spagrh2{position: relative;font-family: "Allison", serif;font-weight: 400;font-style: normal;font-size: 28pt;color: white;margin-top:88px;width: 100%;text-align: center;-webkit-box-reflect: below 1px linear-gradient(transparent, rgb(255 255 255 / 20%));line-height: 1em;outline: none;transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;}
 .grxleft::after{content:'\eb77';font-family:'cappuccicons';font-size: 18px;position: absolute;bottom: -1px;width: 20px;height: 20px;background-color: transparent;transform: scale(1);transition: transform 0.3s ease, text-shadow 0.3s ease;}
 .grxleft:hover .spagrh2{text-shadow:0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;transform: scale(1.1)}

@@ -34,5 +34,5 @@
       100% {box-shadow:0 0 20px rgba(31, 169, 167, 0.5), 0 0 40px rgba(31, 169, 167, 0.3)}
     }
       
-a.cpgr{position:absolute;right:0;bottom:-18px;text-transform:uppercase;letter-spacing: 1px;font-family:"Roboto", serif;font-weight: 400;font-style: normal;font-size: 6px;text-decoration: none;color: #3b3b3b}
-a.cpgr:before{content:'\ec82 TCOM';font-family:'cappuccicons'}  
+a.cpgr{position:absolute;right:0;bottom:-18px;text-transform:uppercase;letter-spacing: 1px;font-family:"Roboto", serif;font-weight: 400;font-style: normal;font-size:10px;text-decoration: none;color: #913f3f}
+a.cpgr:before{content:'\ec82 tcom';font-family:'cappuccicons'}  

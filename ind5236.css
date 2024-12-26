@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 #nrgrv0{width:250px;height: 330px;margin:0 auto;position:relative;transition: all ease-in-out 0.9s;overflow: hidden;cursor: crosshair} 
 .nrgrv1 {width:250px;height:330px;position:absolute;z-index:3;display:grid;transition: all 0.5s ease}
 .nrgrv1 img{width:250px;height:330px}  

@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+    :root{--wtc:#ffffff;
+        --widt:250px; 
+        --higt:330px;  
+        --blk:0,0,0; 
+        --sl:7,111, 41, 0.9; 
+        --sl1:71, 165, 68;
+        --gr:221, 43, 43, 0.6;
+        --gr1:255, 0, 0;
+        --rv:0, 89, 159, 0.6;
+        --rv1:0, 89, 159;
+        --hf:247, 177, 0, 0.6;
+        --hf1:233, 170, 0;
+        
+    }
+
+  #nrgrv0{
+    width:var(--widt);
+    height: var(--higt);
+    margin:0 auto;
+    position:relative;
+    transition: all ease-in-out 0.9s;   
+      overflow: hidden;cursor: crosshair;
+      font-family: "Josefin Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+      text-transform: uppercase;
+} 
+
+.nrgrv1 {
+  width:var(--widt);
+  height:var(--higt);
+  position:absolute;
+  z-index:3;
+  display:grid;
+    transition: all 0.5s ease;
+}
+
+
+.nrgrv1 img{width:var(--widt);
+    height:330px;}  
+
+    /* Efecto de degradado */
+    .nrgrv1::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(var(--acento)), rgba(var(--blk), 0.2));
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.5s ease;
+    }    
+    
+     
+    
+.nrgrv2{
+width:var(--widt);
+    height:var(--higt);
+    position: relative;
+    margin-left:0;
+    transition: all ease-in-out 1s;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    color: var(--wtc);
+}
+
+    
+#nrgrv0:hover{ width:500px;} 
+#nrgrv0:hover .nrgrv2{ margin-left:var(--widt)}
+    
+    
+   .nrgrv1.rav, .nrgrv-circle-text.rav{--acento:var(--rv)}
+   .nrgrv1.gryf,.nrgrv-circle-text.gryf{--acento:var(--gr)}  
+   .nrgrv1.huff,.nrgrv-circle-text.huff{--acento:var(--hf)}        
+   .nrgrv1.sly,.nrgrv-circle-text.sly{--acento:var(--sl)}       
+    
+    .nrgrv-right-container.gryf.bgr,.nrgrvimg.gryf{--borde:var(--gr1), 0.5}
+    .nrgrv-right-container.rav.bgr,.nrgrvimg.rav{--borde:var(--rv1), 0.5}
+    .nrgrv-right-container.huff.bgr,.nrgrvimg.huff{--borde:var(--hf1), 0.5}
+    .nrgrv-right-container.sly.bgr, .nrgrvimg.sly{--borde:var(--sl1), 0.5}    
+
+    .nrgrv-circle.gryf.bgr.nrgrv-circle1,.nrgrv-circle.gryf.bgr.nrgrv-circle2,.nrgrv-circle.gryf.bgr.nrgrv-circle3{--acento:117, 37, 37,0.5} .nrgrv-circle.gryf.bgr.nrgrv-circle1,.nrgrv-circle.gryf.bgr.nrgrv-circle2,.nrgrv-circle.gryf.bgr.nrgrv-circle3{--borde:55, 26, 26,0.7}
+    .nrgrv-circle.rav.bgr.nrgrv-circle1,.nrgrv-circle.rav.bgr.nrgrv-circle2,.nrgrv-circle.rav.bgr.nrgrv-circle3{--acento:1, 16, 83,0.7}  
+    .nrgrv-circle.rav.bgr.nrgrv-circle1,.nrgrv-circle.rav.bgr.nrgrv-circle2,.nrgrv-circle.rav.bgr.nrgrv-circle3{--borde:27, 26, 55,0.7}
+    .nrgrv-circle.huff.bgr.nrgrv-circle1,.nrgrv-circle.huff.bgr.nrgrv-circle2,.nrgrv-circle.huff.bgr.nrgrv-circle3{--acento:247, 177, 0, 0.6}  
+    .nrgrv-circle.huff.bgr.nrgrv-circle1,.nrgrv-circle.huff.bgr.nrgrv-circle2,.nrgrv-circle.huff.bgr.nrgrv-circle3{--borde:148, 94, 0}    
+    .nrgrv-circle.sly.bgr.nrgrv-circle1,.nrgrv-circle.sly.bgr.nrgrv-circle2,.nrgrv-circle.sly.bgr.nrgrv-circle3{--acento:6, 47, 19, 0.6}  
+    .nrgrv-circle.sly.bgr.nrgrv-circle1,.nrgrv-circle.sly.bgr.nrgrv-circle2,.nrgrv-circle.sly.bgr.nrgrv-circle3{--borde:4, 33, 11}  
+    
+    .nrgrv-right-container.gryf{--back:url(https://i.imgur.com/QS7QcUQ.gif)}
+    .nrgrv-right-container.rav{--back:url(https://i.imgur.com/IYgH5l5.gif)}
+    .nrgrv-right-container.huff{--back:url(https://i.imgur.com/rEqHRfS.gif)}
+    .nrgrv-right-container.sly{--back:url(https://i.imgur.com/8inSWhA.gif)}
+
+    .nrgrvcirc.gryf{--bac:url(https://i.imgur.com/PTfpFVH.png)}
+    .nrgrvcirc.rav{--bac:url(https://i.imgur.com/Fq7yJUL.png)}
+    .nrgrvcirc.huff{--bac:url(https://i.imgur.com/NVZj329.png)}
+    .nrgrvcirc.sly{--bac:url(https://i.imgur.com/IP8kFBI.png)}
+    
+
+    
+              /* Contenedor derecho oculto inicialmente */
+    .nrgrv-right-container {
+      position: absolute;
+      top: 0;
+      right: 0; /* Fuera de la vista inicialmente */
+      width:var(--widt);
+      height:var(--higt);
+      background:#232323;background-image:var(--back);
+      color: var(--wtc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      text-align: center;
+      box-shadow: -2px 0 5px rgba(var(--blk), 0.5);
+      transition:opacity 1s ease, right 1s ease; /* Animación suave */
+    }
+
+    /* Efecto de degradado */
+    .nrgrv-right-container::after {
+ content: '';
+    width: 232px;
+    height: 313px;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    border: solid 1px rgba(var(--borde));
+    background: transparent;
+    border-radius: 2px;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 10px rgb(var(--blk), 0.5);
+    } 
+    
+
+      /*** escudo**/
+          .nrgrvcont {
+      position: relative;
+       width:var(--widt);
+    height:var(--higt);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nrgrvcirc {
+    position: absolute;
+    width: 150px;
+    height: 155px;
+    background:var(--bac);filter: sepia(1) drop-shadow(3px 5px 7px black);
+    animation: pulse-border 2s infinite;
+    background-repeat: no-repeat;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+    
+    .nrgrvimg {
+position: absolute;
+    width: 1px;
+    height: 1px;
+    background: var(--wtc);
+    border: solid 1px var(--wtc);
+    top: 143px;
+    left: 115px;
+        
+    }
+
+    @keyframes pulse-image {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+      
+            /***/
+ .nrgrvimg:before{    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: #cb3c3c;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    overflow: hidden;
+    animation: glow 2s infinite alternate;
+    top: -35px;
+    left: -40px;
+    }
+      
+      
+    /* La animación de brillo */
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 20px rgba(var(--acento), 0.7), 0 0 40px rgba(255, 0, 0, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 50px rgba(var(--acento) 1), 0 0 100px rgba(255, 0, 0, 0.7);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(var(--acento), 0.7), 0 0 40px rgba(255, 0, 0, 0.5);
+      }
+    }     
+      
+    
+    /****/
+    
+        /* Superposición con borde oscuro exterior y sin superposición interna */
+.nrgrv1:before {
+content: '';
+    width: 232px;
+    height: 313px;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    border: solid 1px var(--wtc);
+    background: transparent;
+    border-radius: 2px;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 10px rgb(var(--blk), 0.5);
+}
+
+    /* Efecto de degradado */
+    .nrgrv1::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(var(--acento)), rgba(var(--blk), 0.2));
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Texto central */
+    .nrgrv-text {
+position: absolute;
+       bottom: 65px;
+    font-size: 12px;
+    color: var(--wtc);
+    z-index: 2;
+    pointer-events: none;
+    text-align: center;
+    left: 7px;
+    transition: opacity 0.5s ease, left 0.5s ease;
+    text-shadow: 1px 1px 0px rgba(var(--blk), 1);
+    letter-spacing: 3px;
+        width: 235px;
+    }
+    
+    .nrgrv-text1,.nrgrv-text2,.nrgrv-text3{position: absolute;color: var(--wtc);text-shadow: 0 0 5px var(--wtc), 0 0 10px var(--wtc), 0 0 20px var(--wtc), 0 0 30px var(--wtc), 0 0 40px var(--wtc);z-index: 2;pointer-events: none;transition:left 0.5s ease;text-shadow: 1px 1px 0px rgba(var(--blk), 1);letter-spacing: 2px;text-align: center;font-size: 9px;padding: 10px;width: 195px;}
+    
+    .nrgrv-text1 {bottom:10px;left:17px;} 
+    .nrgrv-text2 {bottom: 45px;left: 7px;}
+    .nrgrv-text3 {bottom:10px;left:-317px;}     
+      
+
+    
+    /* Cambiar el color del texto dentro de .nrgrv-text1 a blanco cuando se hace hover sobre .nrgrv-image-hover */
+#nrgrv0:hover .nrgrv-text1 {
+ left:-317px;
+}  
+
+#nrgrv0:hover .nrgrv-text3 {
+ left:17px;
+}      
+    
+    /* Contenedor de los círculos */
+    .nrgrv-circles {
+position: absolute;
+    bottom:70px;
+    width: 230px;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    left:-9px;
+    }
+
+    /* Estilo de los círculos */
+    .nrgrv-circle {
+      width: 35px;
+      height: 35px;
+      background-color:rgba(var(--acento));
+      transition: transform 0.5s ease, background-color 0.5s ease;
+      position: relative;
+      margin-left:40px;
+        transform: rotate(45deg);border: solid 1px rgba(var(--borde));
+    }
+
+    .nrgrv-circle1 i,.nrgrv-circle2 i,.nrgrv-circle3 i{position: absolute;
+    top:7px;
+    left:7px;
+    color: var(--wtc);
+    font-size:1.5em;transform: rotate(-45deg)}    
+    
+    /* Texto dinámico sobre el círculo */
+    .nrgrv-circle-text {
+    position: absolute;
+bottom: 222px;
+    right: -270px;
+    background-color: rgba(var(--acento));
+    color: var(--wtc);
+    padding: 5px 10px;
+    border-radius: 1px;
+    font-size: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0px rgba(var(--blk), 1);
+         opacity: 0;
+  transform: translateX(50px);  /* El texto empieza fuera de la vista, hacia la derecha */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+    }
+
+/* Mostrar el texto dentro de los círculos de derecha a izquierda cuando se hace hover sobre los círculos */
+.nrgrv-circle1:hover + .nrgrv-circle-text1,
+.nrgrv-circle2:hover + .nrgrv-circle-text2,
+.nrgrv-circle3:hover + .nrgrv-circle-text3 {
+  opacity: 1;
+  transform: translateX(0);  /* Mover el texto a su posición visible */
+}
+
+    /* Efecto hover individual para círculos */
+.nrgrv-circle1:hover, .nrgrv-circle2:hover, .nrgrv-circle3:hover {
+  transform:rotate(360deg);  /* Añadido salto de 5px y rotación de 360 grados */
+  background-color: rgba(var(--blk), 0.8);opacity: 0.5;
+}
+
+    /* Mostrar texto en el centro cuando se hace hover sobre cualquier círculo */
+    .nrgrv-circle:hover ~ .nrgrv-text {
+      opacity: 1;
+    }
+
+    /* Efecto de transición para el contenedor principal */
+   #nrgrv0:hover::after {
+      opacity: 0.5;
+    }
+
+    /* Para asegurar que el texto no se vea afectado por el hover de los círculos o contenedor */
+    #nrgrv0:hover .nrgrv-text {
+      opacity: 1; /* Solo cuando el contenedor se hace hover */
+    }
+    
+    
+      .nrgrv-imaz{position: absolute;
+    top:-25px;
+    left: 20px;
+    opacity: 0;font-size: 40px;
+    transition: opacity 1s ease, transform 1s ease;
+    height: 40px;
+    width: 40px;} 
+      
+   #nrgrv0:hover .nrgrv-imaz{opacity: 0.8;transform: translateY(100%);}    
+    
+    a.cpgr{position: absolute;right:0;bottom:0;font-size:10px;text-decoration: none;color: #ddd}
+    a.cpgr:before{content:'\ec82';font-family:'cappuccicons';}  

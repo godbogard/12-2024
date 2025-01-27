@@ -1,0 +1,135 @@
+:root {
+  --mcol: grey; 
+}
+
+/* Estilo general */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #1a1a1a;
+}
+
+/* Contenedor principal */
+.medl {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #0f0f0f;
+  transition: box-shadow 0.3s ease-in-out;
+border: 1px solid transparent; /* Se usa para degradado */
+  border-radius: 1px;
+  background-clip: padding-box; /* Asegura el borde degradado */
+    cursor: crosshair;
+    
+}
+    
+    /* Degradado en el borde */
+.medl {
+  border-image-source: linear-gradient(to bottom, gold, #f49116);
+  border-image-slice: 1;
+}
+
+/* Bordes flotantes */
+.medl::before{
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(to right, gold, #f49116);
+  transition: all 0.3s ease-in-out;
+    bottom: -10px; /* Flota debajo */
+}
+
+
+
+.medl::after {
+     content: '\ecdf';
+     font-family: 'cappuccicons';
+     font-size:28px;
+     position: absolute;
+     top: -15px;color: #fff;
+      transform: scale(1);
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    background: linear-gradient(to bottom, gold, white);
+  -webkit-background-clip: text; /* Clipa el degradado al texto */
+  -webkit-text-fill-color: transparent; /* Hace el fondo del texto transparente */
+}
+
+/* Segundo borde izquierdo flotante */
+.left-border {
+  position: absolute;
+  width: 1px;
+  height:70%;
+  background: linear-gradient(to bottom, gold, #f49116);
+  left: -10px; /* Flota más a la izquierda */
+  top:35px; /* Centrado verticalmente */
+}
+    
+    /* Segundo borde izquierdo flotante */
+.right-border {
+  position: absolute;
+  width: 1px;
+  height: 70%;
+  background: linear-gradient(to bottom, gold, #f49116);
+  right: -10px; /* Flota más a la izquierda */
+  top:35px; /* Centrado verticalmente */
+}
+
+/* Contenedor interno */
+.inner-container {
+  width: 100px;
+  height: 100px;
+  border: 1px solid transparent; /* Borde degradado */
+  background: #333;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  border-image-source: linear-gradient(to bottom, gold, #f49116);
+  border-image-slice: 1;
+}
+
+/* Animación de levitación */
+.medl:hover .inner-container {
+  animation: levitate 1.5s ease-in-out infinite;
+}
+
+/* Texto oculto */
+.hidden-text {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 2;
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-style: normal;
+  background: linear-gradient(to bottom, gold, white);
+  -webkit-background-clip: text; /* Clipa el degradado al texto */
+  -webkit-text-fill-color: transparent; /* Hace el fondo del texto transparente */
+}
+
+/* Mostrar el texto al pasar el cursor */
+.medl:hover .hidden-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keyframes para levitar */
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0); /* Posición inicial */
+  }
+  50% {
+    transform: translateY(-10px); /* Subir ligeramente */
+  }
+}

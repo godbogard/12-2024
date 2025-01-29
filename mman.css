@@ -1,17 +1,6 @@
 :root {
   --mcol: grey; 
 }
-
-/* Estilo general */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #1a1a1a;
-}
-
 /* Contenedor principal */
 .medl {
   width: 200px;

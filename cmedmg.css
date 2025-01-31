@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.cma0 {width: 220px;height: 230px;position: relative;}
+.cma1 {width: 200px;height: 200px;display: flex;justify-content: center;align-items: center;position: relative;background: #0f0f0f;transition: box-shadow 0.3s ease-in-out;background-size:cover;border: 1px solid transparent;border-radius: 1px;background-clip: padding-box;cursor: crosshair;position: absolute;top: 15px;left:9px;border-image-source: linear-gradient(to bottom, gold, #f49116);border-image-slice: 1;}
+.cma1::before {content: "";position: absolute;width: 70%;height: 1px;background: linear-gradient(to right, gold, #f49116);transition: all 0.3s ease-in-out;bottom: -10px;}
+.cma1::after {content: '\ecdf';font-family: 'cappuccicons';font-size: 36px;position: absolute;top: -11px;color: #fff;transform: scale(1);transition: transform 0.3s ease, text-shadow 0.3s ease;background: linear-gradient(to bottom, gold, white);-webkit-background-clip: text;-webkit-text-fill-color: transparent;height: 30px;padding-top: 10px}
+.cma2 {position: absolute;width: 1px;height: 70%;background: linear-gradient(to bottom, gold, #f49116);left: -10px;top: 35px;}
+.cma3 {position: absolute;width: 1px;height: 70%;background: linear-gradient(to bottom, gold, #f49116);right: -10px;top: 35px;}
+.cma4 {width: 100px;height: 100px;border: 1px solid transparent;position: absolute;z-index: 1;background-size:cover!important;transition:transform 0.3s ease-in-out, background-color 0.3s ease-in-out;border-image-source: linear-gradient(to bottom, gold, #f49116);border-image-slice: 1}
+.cma1:hover .cma4 {animation: levitate01 1.5s ease-in-out infinite;}
+.cma5 {position: absolute;bottom: 0;font-size: 12px!important;opacity: 0;transform: translateY(20px);transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;z-index: 2;font-family: "Bebas Neue", serif;font-weight: 400;letter-spacing: 1px;font-style: normal;background: linear-gradient(to bottom, gold, white);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+.cma1:hover .cma5 {opacity: 1;transform: translateY(0)}
+@keyframes levitate01 {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}

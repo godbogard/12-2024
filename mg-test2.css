@@ -77,12 +77,12 @@ position: absolute;
   }
 
   .sgmg-nm:after {
-    content: '';
-    width: 55px;
+content: '';
+    width: 53px;
     height: 1px;
     background: #3b3b3b;
     position: absolute;
-    top: 8px;
+    top: 6px;
     left: 250px;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     transition-delay: 0.5s;

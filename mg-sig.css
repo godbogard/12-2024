@@ -12,7 +12,6 @@
     border-top-width: 1px;
     border-right-width: 1px;
     position: relative;
-    top: 5px;
     transition: border-color 1s ease-in-out, border-bottom-color 1s ease-in-out;
     transition-delay: 0.5s;
       text-transform: uppercase;
@@ -48,7 +47,6 @@
     left: 0;
   }
 
-  /* --- NOMBRE: efecto de escala de grande a pequeño --- */
   .sgmg-nm {
 position: absolute;
     bottom: -4px;
@@ -97,7 +95,6 @@ content: '';
     transition-delay: 0.5s;
   }
 
-  /* --- OVERLAY HOVER PRINCIPAL --- */
   .sgmg-hover-overlay {
     position: absolute;
     top: 4px;
@@ -127,8 +124,6 @@ content: '';
     transition: opacity 0.8s ease-in-out;
     transition-delay: 0.3s;
   }
-
-  /* --- DIV DIAGONAL (TERCER DIV) --- */
   .sgmg-diagonal-wrapper {
     position: absolute;
     top: 0;
@@ -148,7 +143,6 @@ content: '';
     transition-delay: 0.6s;
   }
 
-  /* Imagen de fondo */
   .sgmg-diagonal-bg {
     position: absolute;
     top: 0;
@@ -163,11 +157,8 @@ content: '';
     transition-delay: 0.7s;
   }
 
-  .sgmg-ex:hover .sgmg-diagonal-bg {
-    filter: grayscale(1);
-  }
+  .sgmg-ex:hover .sgmg-diagonal-bg {filter: grayscale(1);}
 
-  /* Overlay rojo */
   .sgmg-diagonal-overlay {
     position: absolute;
     top: 0;
@@ -180,7 +171,6 @@ content: '';
     mix-blend-mode: overlay;
   }
 
-  /* --- LETRA GIRATORIA - POSICIONADA FUERA DEL WRAPPER --- */
   .sgmg-diagonal-letter {
     position: absolute;
     top: 20%;
@@ -206,7 +196,6 @@ content: '';
     transition-delay: 0.9s;
   }
 
-  /* --- CONTENIDO DEL OVERLAY (lado izquierdo inferior) --- */
   .sgmg-overlay-content {
     position: relative;
     z-index: 2;
@@ -234,9 +223,7 @@ content: '';
   font-style: normal;
   }
 
-  .sgmg-ex:hover .sgmg-overlay-content h2 {
-    transform: translateX(0);
-  }
+  .sgmg-ex:hover .sgmg-overlay-content h2 {transform: translateX(0);}
 
   .sgmg-overlay-content .line {
 width: 200px;
@@ -249,9 +236,7 @@ width: 200px;
     margin-top: 0;
   }
 
-  .sgmg-ex:hover .sgmg-overlay-content .line {
-    transform: scaleX(1);
-  }
+  .sgmg-ex:hover .sgmg-overlay-content .line {transform: scaleX(1);}
 
   .sgmg-overlay-content p {
 font-size: 8px;
@@ -264,7 +249,4 @@ font-size: 8px;
     transition-delay: 0.6s;
     font-family: "Roboto", serif;
   }
-
-  .sgmg-ex:hover .sgmg-overlay-content p {
-    transform: translateX(0);
-  }
+  .sgmg-ex:hover .sgmg-overlay-content p {transform: translateX(0); }

@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+  .sgmg-ex {
+    padding: 4px;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    border: 0 solid #3b3b3b;
+    border-bottom-width: 1px;
+    border-bottom-color: transparent;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    position: relative;
+    top: 5px;
+    transition: border-color 1s ease-in-out, border-bottom-color 1s ease-in-out;
+    transition-delay: 0.5s;
+      text-transform: uppercase;
+  }
+
+  .sgmg-ex:hover {
+    border-color: #862b2b;
+    border-bottom-color: #862b2b;
+    transition: border-color 1s ease-in-out, border-bottom-color 1s ease-in-out;
+    transition-delay: 0.5s;
+    cursor: crosshair;
+  }
+
+  .sgmg {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .sgmg:after {
+    content: '';
+    background: rgba(0, 0, 0, .7);
+    mix-blend-mode: overlay;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* --- NOMBRE: efecto de escala de grande a pequeño --- */
+  .sgmg-nm {
+position: absolute;
+    bottom: -4px;
+    left: 6px;
+    height: 10px;
+    width: 300px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 8px;
+    color: #862b2b;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transition-delay: 0.5s;
+    transform: scale(1);
+    opacity: 1;
+    transform-origin: left center;
+    font-family: "Roboto", serif;
+  }
+
+  .sgmg-ex:hover .sgmg-nm {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transition-delay: 0.5s;
+  }
+
+  .sgmg-nm:after {
+    content: '';
+    width: 55px;
+    height: 1px;
+    background: #3b3b3b;
+    position: absolute;
+    top: 8px;
+    left: 250px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transition-delay: 0.5s;
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+
+  .sgmg-ex:hover .sgmg-nm:after {
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transition-delay: 0.5s;
+  }
+
+  /* --- OVERLAY HOVER PRINCIPAL --- */
+  .sgmg-hover-overlay {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease-in-out;
+    transition-delay: 0.3s;
+    z-index: 20;
+    overflow: hidden;
+  }
+
+  .sgmg-ex:hover .sgmg-hover-overlay {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+    transition-delay: 0.3s;
+  }
+
+  /* --- DIV DIAGONAL (TERCER DIV) --- */
+  .sgmg-diagonal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 40% 0, 100% 100%, 0 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    transition-delay: 0.6s;
+  }
+
+  .sgmg-ex:hover .sgmg-diagonal-wrapper {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+    transition-delay: 0.6s;
+  }
+
+  /* Imagen de fondo */
+  .sgmg-diagonal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(1);
+    transition: filter 0.8s ease-in-out;
+    transition-delay: 0.7s;
+  }
+
+  .sgmg-ex:hover .sgmg-diagonal-bg {
+    filter: grayscale(1);
+  }
+
+  /* Overlay rojo */
+  .sgmg-diagonal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(134, 43, 43, 1);
+    pointer-events: none;
+    opacity: 1;
+    mix-blend-mode: overlay;
+  }
+
+  /* --- LETRA GIRATORIA - POSICIONADA FUERA DEL WRAPPER --- */
+  .sgmg-diagonal-letter {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    transform: translate(50%, -50%) rotate(0deg);
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 20px rgba(134, 43, 43, 0.8), 0 0 40px rgba(134, 43, 43, 0.4);
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0.9s;
+    pointer-events: none;
+      font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+  .sgmg-ex:hover .sgmg-diagonal-letter {
+    opacity: 1;
+    transform: translate(50%, -50%) rotate(360deg);
+    transition: opacity 0.8s ease-in-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0.9s;
+  }
+
+  /* --- CONTENIDO DEL OVERLAY (lado izquierdo inferior) --- */
+  .sgmg-overlay-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .sgmg-overlay-content h2 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    
+    color: #fff;
+    text-shadow: 0 0 10px rgba(134, 43, 43, 0.6);
+    transform: translateX(-120%);
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0.5s;
+      font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+  .sgmg-ex:hover .sgmg-overlay-content h2 {
+    transform: translateX(0);
+  }
+
+  .sgmg-overlay-content .line {
+width: 200px;
+    height: 1px;
+    background: #862b2b;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease-in-out;
+    transition-delay: 0.7s;
+    margin-top: 0;
+  }
+
+  .sgmg-ex:hover .sgmg-overlay-content .line {
+    transform: scaleX(1);
+  }
+
+  .sgmg-overlay-content p {
+    font-size: 10px;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    transform: translateX(120%);
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0.6s;
+      font-family: "Roboto", serif;
+  }
+
+  .sgmg-ex:hover .sgmg-overlay-content p {
+    transform: translateX(0);
+  }

@@ -47,26 +47,26 @@
     left: 0;
   }
 
+  /* --- NOMBRE: efecto de escala de grande a pequeño --- */
   .sgmg-nm {
-    position: absolute;
-    bottom: -8px;
+position: absolute;
+    bottom: -4px;
     left: 6px;
     height: 10px;
     width: 300px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: "Roboto Serif", serif;
-    font-weight: 500;
+    letter-spacing: 3px;
+    font-weight: 600;
     font-style: normal;
-    font-size: 9px;
+    font-size: 8px;
     color: #862b2b;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    z-index: 10;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     transition-delay: 0.5s;
     transform: scale(1);
     opacity: 1;
     transform-origin: left center;
+    font-family: "Roboto", serif;
   }
 
   .sgmg-ex:hover .sgmg-nm {
@@ -112,7 +112,7 @@
     align-items: center;
     text-align: center;
     color: #fff;
-    font-family: "Roboto Serif", serif;
+    font-family: "Roboto", serif;
     padding: 20px;
     box-sizing: border-box;
     opacity: 0;
@@ -129,6 +129,7 @@
     transition-delay: 0.3s;
   }
 
+  /* --- DIV DIAGONAL (TERCER DIV) --- */
   .sgmg-diagonal-wrapper {
     position: absolute;
     top: 0;
@@ -148,6 +149,7 @@
     transition-delay: 0.6s;
   }
 
+  /* Imagen de fondo */
   .sgmg-diagonal-bg {
     position: absolute;
     top: 0;
@@ -166,6 +168,7 @@
     filter: grayscale(1);
   }
 
+  /* Overlay rojo */
   .sgmg-diagonal-overlay {
     position: absolute;
     top: 0;
@@ -178,13 +181,12 @@
     mix-blend-mode: overlay;
   }
 
+  /* --- LETRA GIRATORIA - POSICIONADA FUERA DEL WRAPPER --- */
   .sgmg-diagonal-letter {
     position: absolute;
     top: 20%;
     right: 15%;
     transform: translate(50%, -50%) rotate(0deg);
-    z-index: 3;
-    font-family: "Roboto Serif", serif;
     font-size: 48px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9);
@@ -193,6 +195,9 @@
     transition: opacity 0.8s ease-in-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     transition-delay: 0.9s;
     pointer-events: none;
+      font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   }
 
   .sgmg-ex:hover .sgmg-diagonal-letter {
@@ -227,6 +232,9 @@
     transform: translateX(-120%);
     transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     transition-delay: 0.5s;
+      font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   }
 
   .sgmg-ex:hover .sgmg-overlay-content h2 {
@@ -249,8 +257,8 @@
   }
 
   .sgmg-overlay-content p {
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 10px;
+    font-weight: 500;
     margin: 0;
     opacity: 0.9;
     letter-spacing: 1px;
@@ -258,6 +266,8 @@
     transform: translateX(120%);
     transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     transition-delay: 0.6s;
+      font-family: "Roboto", serif;
+      text-transform: uppercase;
   }
 
   .sgmg-ex:hover .sgmg-overlay-content p {

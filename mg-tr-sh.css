@@ -177,14 +177,7 @@
   left: 0;
 }
 
-.dacm-desp-num{
-  position: absolute;
-  width: 370px;
-  pointer-events: none;
-  height: 55px;
-  top: -7px;
-  right: -76px;
-}
+.dacm-desp-num{position: absolute;width: 370px;pointer-events: none;height: 55px;top: -3px;right: -76px;}
 .dacm-desp-nbr{
   position:absolute;
   font-size: 32px;
@@ -206,7 +199,6 @@
   50%{transform: translateY(-8px) rotate(0deg)}
   100%{transform: translateY(5px) rotate(5deg)}
 }
-
 .dacm-desp:hover .dacm-desp-nbr{animation:none}
 
 .dacm-desp:hover .dacm-desp-nbr-2{

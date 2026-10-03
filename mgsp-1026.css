@@ -532,6 +532,7 @@ position: absolute;
   padding-right: 6px;
   scrollbar-width: thin;
   scrollbar-color: #454545 #1a1a1a;
+  text-align: justify; 
 }
 .grsp-tab-content::-webkit-scrollbar{width: 4px}
 .grsp-tab-content::-webkit-scrollbar-track{background: #1a1a1a}

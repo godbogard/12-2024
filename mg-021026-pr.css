@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Hind:wght@300;400;500;600;700&family=Poiret+One&display=swap');
-body{background:#000}
-
-:root{
-  --despmain:#1e1e1e;--despmain1:30, 30, 30, 0.8;--despmain2:30, 30, 30, 0.4;--despmain3:#181818;--despmain4:#0f0f0f;--despmain5:#ffffff;--despmain6:#552121;}
-
-/* ============================================================
-   PANEL
-   ============================================================ */
+:root{--despmain:#1e1e1e;--despmain1:30, 30, 30, 0.8;--despmain2:30, 30, 30, 0.4;--despmain3:#181818;--despmain4:#0f0f0f;--despmain5:#ffffff;--despmain6:#552121;}
 .grsp-desp{
   position:relative;
   width:745px;
@@ -30,10 +23,6 @@ body{background:#000}
   border-image-slice: 1;
   z-index: 10;
 }
-
-/* ============================================================
-   FONDO
-   ============================================================ */
 .grsp-desp-bg{
   position: absolute;
   width: 465px;
@@ -78,7 +67,6 @@ body{background:#000}
 }
 .grsp-desp:hover .grsp-desp-bg1{transform:rotate(-5deg) scale(1.2)}
 
-/* Cambio de fondo según el thumb activo */
 #grsp-bg1:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg1)}
 #grsp-bg2:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg2)}
 #grsp-bg3:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg3)}
@@ -104,10 +92,7 @@ body{background:#000}
 #grsp-bg23:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg23)}
 #grsp-bg24:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg24)}    
 #grsp-bg25:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg25)} 
-    
-/* ============================================================
-   RETRATO
-   ============================================================ */
+
 .grsp-desp-port{
   position: absolute;
   top: 99px;
@@ -132,9 +117,6 @@ body{background:#000}
   background-repeat: no-repeat;
 }
 
-/* ============================================================
-   META
-   ============================================================ */
 .grsp-desp-meta{
   position: absolute;
   top:100px;
@@ -166,9 +148,6 @@ body{background:#000}
 .grsp-desp-meta-line:nth-child(3)::before{content:'Fundado'}
 .grsp-desp:hover .grsp-desp-meta-line::before{color: #aaa}
 
-/* ============================================================
-   TÍTULO + DESCRIPCIÓN
-   ============================================================ */
 .grsp-desp-in{
   position:absolute;
   top:20px;
@@ -198,9 +177,6 @@ body{background:#000}
   left: 0;
 }
 
-/* ============================================================
-   NÚMEROS FLOTANTES
-   ============================================================ */
 .grsp-desp-num{
   position: absolute;
   width: 370px;
@@ -286,9 +262,6 @@ body{background:#000}
   100%{box-shadow:0 0 40px 20px rgba(184, 134, 11, 0); opacity:0}
 }
 
-/* ============================================================
-   PLACA
-   ============================================================ */
 .grsp-desp-nplt{
   position: absolute;
   width: 180px;
@@ -328,9 +301,6 @@ body{background:#000}
   color: var(--despmain5);
 }
 
-/* ============================================================
-   CRÉDITOS
-   ============================================================ */
 .grsp-cr {
   position: absolute;
   right: 12px;
@@ -371,9 +341,6 @@ body{background:#000}
   color: #8a3a3a;
 }
 
-/* ============================================================
-   MINIATURAS — barra horizontal con scroll
-   ============================================================ */
 .grsp-thumbs {
   position: absolute;
   bottom: 19px;
@@ -422,7 +389,6 @@ body{background:#000}
   box-shadow: 0 0 8px rgb(65 65 65 / 71%);
 }
 
-/* Cada thumb lee su variable del padre */
 .grsp-thumb[for="grsp-bg1"]{background-image: var(--bg1)}
 .grsp-thumb[for="grsp-bg2"]{background-image: var(--bg2)}
 .grsp-thumb[for="grsp-bg3"]{background-image: var(--bg3)}
@@ -449,7 +415,6 @@ body{background:#000}
 .grsp-thumb[for="grsp-bg24"]{background-image: var(--bg24)}
 .grsp-thumb[for="grsp-bg25"]{background-image: var(--bg25)}     
 
-/* Thumb activo */
 #grsp-bg1:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg1"],
 #grsp-bg2:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg2"],
 #grsp-bg3:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg3"],
@@ -476,9 +441,6 @@ body{background:#000}
 #grsp-bg24:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg24"],
 #grsp-bg25:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg25"]{opacity: 1;filter: grayscale(0%);border-color: #696969}
 
-/* ============================================================
-   CAJA DE DESCRIPCIONES — panel dedicado fuera del thumbs
-   ============================================================ */
 .grsp-tip-box {
     position: absolute;
     bottom: 105px;
@@ -506,7 +468,6 @@ body{background:#000}
     max-width: 100%;
 }
 
-/* Mostrar la descripción según el input :checked */
 #grsp-bg1:checked ~ .grsp-tip-box .grsp-tip-1,
 #grsp-bg2:checked ~ .grsp-tip-box .grsp-tip-2,
 #grsp-bg3:checked ~ .grsp-tip-box .grsp-tip-3,
@@ -537,9 +498,6 @@ body{background:#000}
   from{opacity: 0; transform: translateY(4px)}to{opacity: 1; transform: translateY(0)}
 }
 
-/* ============================================================
-   TABS — CSS puro
-   ============================================================ */
 .grsp-tabs-wrap {
   position: absolute;
   top: 200px;

@@ -158,15 +158,15 @@
   font-weight:400;
   font-style:normal;
   margin:0;
-  top:10px;
+  top:15px;
   position:absolute;
   text-shadow:0 0 5px rgba(var(--despmain1));
 }
 .dacm-desp-na:before{content:'—'}
 .dacm-desp-oct{
-  font-size: 12px;
-  position: absolute;
-  top: 50px;
+  font-size:12px;
+  position:absolute;
+  top:40px;
   font-family: 'Poiret One', cursive;
   letter-spacing: 3px;
   text-transform: uppercase;

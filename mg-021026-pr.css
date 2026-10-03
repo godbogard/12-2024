@@ -117,8 +117,8 @@
 .dacm-desp-meta{
     position: absolute;
     top: 100px;
-    right: 25px;
-    width: 160px;
+    right: 10px;
+    width: 170px;
     display: flex;
     flex-direction: column;
     gap: 5px;

@@ -118,16 +118,16 @@
 }
 
 .grsp-desp-meta{
-  position: absolute;
-  top:100px;
-  right: 20px;
-  width: 125px;
-  display: flex;
-  flex-direction: column;
-  gap:5px;
-  z-index: 3;
-  font-family: "Hind", sans-serif;
-  text-align: left;
+    position: absolute;
+    top: 100px;
+    right: 5px;
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 3;
+    font-family: "Hind", sans-serif;
+    text-align: left;
 }
 .grsp-desp-meta-line{
   display: flex;

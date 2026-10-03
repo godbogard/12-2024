@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Hind:wght@300;400;500;600;700&family=Poiret+One&display=swap');
-:root{--despmain:#1e1e1e;--despmain1:30, 30, 30, 0.8;--despmain2:30, 30, 30, 0.4;--despmain3:#181818;--despmain4:#0f0f0f;--despmain5:#ffffff;--despmain6:#552121;}
-.dacm-desp{
+body{background:#000}
+
+:root{
+  --despmain:#1e1e1e;--despmain1:30, 30, 30, 0.8;--despmain2:30, 30, 30, 0.4;--despmain3:#181818;--despmain4:#0f0f0f;--despmain5:#ffffff;--despmain6:#552121;}
+
+/* ============================================================
+   PANEL
+   ============================================================ */
+.grsp-desp{
   position:relative;
-  width:780px;
+  width:745px;
   height:500px;
   margin:0 auto;
   overflow:hidden;
@@ -10,12 +17,12 @@
   background-color:var(--despmain4);
   border:solid 1px var(--despmain3);
 }
-.dacm-desp::before{
+.grsp-desp::before{
   content: '';
   position: absolute;
   top: 9px;
   left: 9px;
-  width:760px;
+  width: 725px;
   pointer-events: none;
   height: 481px;
   border: 1px inset transparent;
@@ -23,7 +30,11 @@
   border-image-slice: 1;
   z-index: 10;
 }
-.dacm-desp-bg{
+
+/* ============================================================
+   FONDO
+   ============================================================ */
+.grsp-desp-bg{
   position: absolute;
   width: 465px;
   height: 300px;
@@ -36,7 +47,7 @@
   transition: transform 0.5s ease, opacity 0.5s ease;
   left: 9px;
 }
-.dacm-desp-bg1{
+.grsp-desp-bg1{
   position:absolute;
   width:500px;
   height:300px;
@@ -45,7 +56,7 @@
   background-position:center;
   transition:transform 0.5s ease, opacity 0.5s ease;
 }
-.dacm-desp-bg::before{
+.grsp-desp-bg::before{
   content:'';
   position:absolute;
   top:9px;
@@ -55,7 +66,7 @@
   border:solid 1px var(--despmain5);
   opacity:0.3;
 }
-.dacm-desp-bg::after{
+.grsp-desp-bg::after{
   content:'';
   position:absolute;
   bottom:0;
@@ -65,36 +76,42 @@
   background:linear-gradient(transparent, #141414);
   opacity:1;
 }
-.dacm-desp:hover .dacm-desp-bg1{transform:rotate(-5deg) scale(1.2)}
-#dacm-bg1:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg1)}
-#dacm-bg2:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg2)}
-#dacm-bg3:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg3)}
-#dacm-bg4:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg4)}
-#dacm-bg5:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg5)}
-#dacm-bg6:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg6)}
-#dacm-bg7:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg7)}
-#dacm-bg8:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg8)}
-#dacm-bg9:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg9)}
-#dacm-bg10:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg10)}
-#dacm-bg11:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg11)}
-#dacm-bg12:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg12)}
-#dacm-bg13:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg13)}
-#dacm-bg14:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg14)}
-#dacm-bg15:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg15)}
-#dacm-bg16:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg16)} 
-#dacm-bg17:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg17)}
-#dacm-bg18:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg18)}
-#dacm-bg19:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg19)}
-#dacm-bg20:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg20)}
-#dacm-bg21:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg21)}
-#dacm-bg22:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg22)}
-#dacm-bg23:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg23)}
-#dacm-bg24:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg24)}    
-#dacm-bg25:checked ~ .dacm-desp-bg .dacm-desp-bg1{background-image: var(--bg25)} 
-.dacm-desp-port{
+.grsp-desp:hover .grsp-desp-bg1{transform:rotate(-5deg) scale(1.2)}
+
+/* Cambio de fondo según el thumb activo */
+#grsp-bg1:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg1)}
+#grsp-bg2:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg2)}
+#grsp-bg3:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg3)}
+#grsp-bg4:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg4)}
+#grsp-bg5:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg5)}
+#grsp-bg6:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg6)}
+#grsp-bg7:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg7)}
+#grsp-bg8:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg8)}
+#grsp-bg9:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg9)}
+#grsp-bg10:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg10)}
+#grsp-bg11:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg11)}
+#grsp-bg12:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg12)}
+#grsp-bg13:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg13)}
+#grsp-bg14:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg14)}
+#grsp-bg15:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg15)}
+#grsp-bg16:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg16)} 
+#grsp-bg17:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg17)}
+#grsp-bg18:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg18)}
+#grsp-bg19:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg19)}
+#grsp-bg20:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg20)}
+#grsp-bg21:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg21)}
+#grsp-bg22:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg22)}
+#grsp-bg23:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg23)}
+#grsp-bg24:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg24)}    
+#grsp-bg25:checked ~ .grsp-desp-bg .grsp-desp-bg1{background-image: var(--bg25)} 
+    
+/* ============================================================
+   RETRATO
+   ============================================================ */
+.grsp-desp-port{
   position: absolute;
   top: 99px;
-  right:190px;
+  right: 157px;
   width: 100px;
   height: 100px;
   border: 1px solid var(--despmain);
@@ -102,7 +119,7 @@
   background-size:cover;
   z-index: 2;
 }
-.dacm-desp-char-port{
+.grsp-desp-char-port{
   position: absolute;
   top: 110px;
   left: 20px;
@@ -114,23 +131,27 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.dacm-desp-meta{
-    position: absolute;
-    top: 100px;
-    right: 10px;
-    width: 170px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 3;
-    font-family: "Hind", sans-serif;
-    text-align: left;
+
+/* ============================================================
+   META
+   ============================================================ */
+.grsp-desp-meta{
+  position: absolute;
+  top:100px;
+  right: 20px;
+  width: 125px;
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  z-index: 3;
+  font-family: "Hind", sans-serif;
+  text-align: left;
 }
-.dacm-desp-meta-line{
+.grsp-desp-meta-line{
   display: flex;
   flex-direction: column;
   border-left: 1px solid #2a2a2a;
-  padding-left:12px;
+  padding-left: 8px;
   transition: border-color .3s ease;
   font-size: 9px;
   letter-spacing: 1px;
@@ -138,13 +159,17 @@
   text-transform: uppercase;
   line-height: 1.7;
 }
-.dacm-desp:hover .dacm-desp-meta-line{border-left-color:#696969}
-.dacm-desp-meta-line::before{font-size: 7px;letter-spacing: 2px;text-transform: uppercase;color: #666;transition:color .3s ease}
-.dacm-desp-meta-line:nth-child(1)::before{content:'Propietario'}
-.dacm-desp-meta-line:nth-child(2)::before{content:'Ocupación'}
-.dacm-desp-meta-line:nth-child(3)::before{content:'Fundado'}
-.dacm-desp:hover .dacm-desp-meta-line::before{color: #aaa}
-.dacm-desp-in{
+.grsp-desp:hover .grsp-desp-meta-line{border-left-color:#696969}
+.grsp-desp-meta-line::before{font-size: 7px;letter-spacing: 2px;text-transform: uppercase;color: #666;transition:color .3s ease}
+.grsp-desp-meta-line:nth-child(1)::before{content:'Propietario'}
+.grsp-desp-meta-line:nth-child(2)::before{content:'Ocupación'}
+.grsp-desp-meta-line:nth-child(3)::before{content:'Fundado'}
+.grsp-desp:hover .grsp-desp-meta-line::before{color: #aaa}
+
+/* ============================================================
+   TÍTULO + DESCRIPCIÓN
+   ============================================================ */
+.grsp-desp-in{
   position:absolute;
   top:20px;
   left:40px;
@@ -152,7 +177,7 @@
   z-index:2;
   width:100%;
 }
-.dacm-desp-na{
+.grsp-desp-na{
   font-family:'Baskervville SC', serif;
   font-size:28px;
   font-weight:400;
@@ -162,17 +187,21 @@
   position:absolute;
   text-shadow:0 0 5px rgba(var(--despmain1));
 }
-.dacm-desp-na:before{content:'—'}
-.dacm-desp-oct{
-  font-size:12px;
-  position:absolute;
+.grsp-desp-na:before{content:'—'}
+.grsp-desp-oct{
+  font-size: 12px;
+  position: absolute;
   top:40px;
   font-family: 'Poiret One', cursive;
   letter-spacing: 3px;
   text-transform: uppercase;
   left: 0;
 }
-.dacm-desp-num{
+
+/* ============================================================
+   NÚMEROS FLOTANTES
+   ============================================================ */
+.grsp-desp-num{
   position: absolute;
   width: 370px;
   pointer-events: none;
@@ -180,53 +209,57 @@
   top: -3px;
   right: -76px;
 }
-.dacm-desp-nbr{
+.grsp-desp-nbr{
   position:absolute;
   font-size: 32px;
   color:var(--despmain5);
   opacity: 0.7;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
   transition: all 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: dacmFloat 3s infinite alternate ease-in-out;
+  animation: grspFloat 3s infinite alternate ease-in-out;
   font-family:'Baskervville SC', serif;
   font-weight: 400;
   font-style: normal;
 }
-.dacm-desp-nbr-2{top:40%; left:25%; animation-delay: 0.5s}
-.dacm-desp-nbr-4{top:55%; left:65%; animation-delay: 0.8s}
-.dacm-desp-nbr-7{top:60%; left:45%; animation-delay: 0.2s}
+.grsp-desp-nbr-2{top:40%; left:25%; animation-delay: 0.5s}
+.grsp-desp-nbr-4{top:55%; left:65%; animation-delay: 0.8s}
+.grsp-desp-nbr-7{top:60%; left:45%; animation-delay: 0.2s}
 
-@keyframes dacmFloat{
+@keyframes grspFloat{
   0%{transform: translateY(0) rotate(-5deg)}
   50%{transform: translateY(-8px) rotate(0deg)}
   100%{transform: translateY(5px) rotate(5deg)}
 }
-.dacm-desp:hover .dacm-desp-nbr{animation:none}
 
-.dacm-desp:hover .dacm-desp-nbr-2{
+.grsp-desp:hover .grsp-desp-nbr{animation:none}
+
+.grsp-desp:hover .grsp-desp-nbr-2{
   top:88%; left: 35%; z-index: 100; opacity: 1;
   transition: top 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), left 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.5s ease;
-  animation: dacmOrderedFloat 2s infinite ease-in-out 1.5s;
+  animation: grspOrderedFloat 2s infinite ease-in-out 1.5s;
   text-shadow: 0 0 15px rgba(184, 134, 11, 0.8);
   transition-delay: 0.2s;
 }
-.dacm-desp:hover .dacm-desp-nbr-4{
+.grsp-desp:hover .grsp-desp-nbr-4{
   top:88%; left: 47%; z-index: 100; opacity: 1;
   transition: top 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), left 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.5s ease;
-  animation: dacmOrderedFloat 1.5s infinite ease-in-out 1.5s;
+  animation: grspOrderedFloat 1.5s infinite ease-in-out 1.5s;
   text-shadow: 0 0 15px rgba(184, 134, 11, 0.8);
   transition-delay: 0.5s;
 }
-.dacm-desp:hover .dacm-desp-nbr-7{
+.grsp-desp:hover .grsp-desp-nbr-7{
   top:88%; left: 60%; z-index: 100; opacity: 1;
   transition: top 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), left 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.5s ease;
-  animation: dacmOrderedFloat 2s infinite ease-in-out 1.5s;
+  animation: grspOrderedFloat 2s infinite ease-in-out 1.5s;
   text-shadow: 0 0 15px rgba(184, 134, 11, 0.8);
   transition-delay: 0.8s;
 }
 
-@keyframes dacmOrderedFloat{0%, 100%{transform: translateY(0); text-shadow: 0 0 10px rgba(184, 134, 11, 0.6)}50%{transform: translateY(-10px); text-shadow: 0 0 15px rgba(184, 134, 11, 1)}}
-.dacm-desp-nbr::after{
+@keyframes grspOrderedFloat{
+  0%, 100%{transform: translateY(0); text-shadow: 0 0 10px rgba(184, 134, 11, 0.6)}50%{transform: translateY(-10px); text-shadow: 0 0 15px rgba(184, 134, 11, 1)}
+}
+
+.grsp-desp-nbr::after{
   content:'';
   position:absolute;
   top:50%;
@@ -239,20 +272,24 @@
   opacity:0;
   z-index:-1;
 }
-.dacm-desp:hover .dacm-desp-nbr::after{
+.grsp-desp:hover .grsp-desp-nbr::after{
   opacity:1;
-  animation:dacmNumberTrail 1.5s ease-out;
+  animation:grspNumberTrail 1.5s ease-out;
   animation-fill-mode:forwards;
 }
-.dacm-desp:hover .dacm-desp-nbr-2::after{animation-delay:0.2s}
-.dacm-desp:hover .dacm-desp-nbr-4::after{animation-delay:0.5s}
-.dacm-desp:hover .dacm-desp-nbr-7::after{animation-delay:0.8s}
+.grsp-desp:hover .grsp-desp-nbr-2::after{animation-delay:0.2s}
+.grsp-desp:hover .grsp-desp-nbr-4::after{animation-delay:0.5s}
+.grsp-desp:hover .grsp-desp-nbr-7::after{animation-delay:0.8s}
 
-@keyframes dacmNumberTrail{
+@keyframes grspNumberTrail{
   0%{box-shadow:0 0 0 0 rgba(184, 134, 11, 0.6); opacity:0.8}
   100%{box-shadow:0 0 40px 20px rgba(184, 134, 11, 0); opacity:0}
 }
-.dacm-desp-nplt{
+
+/* ============================================================
+   PLACA
+   ============================================================ */
+.grsp-desp-nplt{
   position: absolute;
   width: 180px;
   height: 48px;
@@ -269,17 +306,18 @@
   align-items: center;
   z-index: 10;
 }
-.dacm-desp:hover .dacm-desp-nplt{
+.grsp-desp:hover .grsp-desp-nplt{
   opacity: 1;
   transform: translateX(-50%) translateY(0);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  animation: dacmPlateFloat 3s infinite ease-in-out;
+  animation: grspPlateFloat 3s infinite ease-in-out;
 }
-@keyframes dacmPlateFloat{
+@keyframes grspPlateFloat{
   0%, 100%{transform: translateX(-50%) translateY(0)}
   50%{transform: translateX(-50%) translateY(-5px)}
 }
-.dacm-floor {
+
+.grsp-floor {
   position: absolute;
   top: 2px;
   left: 5px;
@@ -289,7 +327,11 @@
   font-family: "Hind", sans-serif;
   color: var(--despmain5);
 }
-.dacm-cr {
+
+/* ============================================================
+   CRÉDITOS
+   ============================================================ */
+.grsp-cr {
   position: absolute;
   right: 12px;
   bottom: 5px;
@@ -299,7 +341,7 @@
   gap: 6px;
   pointer-events: none;
 }
-.dacm-cr::before {
+.grsp-cr::before {
   content: 'by Mason for TCOM';
   font-family: "Hind", sans-serif;
   font-size: 7px;
@@ -309,7 +351,7 @@
   transition: color .3s ease;
   white-space: nowrap;
 }
-.dacm-cr::after {
+.grsp-cr::after {
   content: '\ec82';
   font-family: 'cappuccicons';
   font-size: 12px;
@@ -324,11 +366,15 @@
   cursor: pointer;
   pointer-events: auto;
 }
-.dacm-desp:hover .dacm-cr::before,
-.dacm-desp:hover .dacm-cr::after {
+.grsp-desp:hover .grsp-cr::before,
+.grsp-desp:hover .grsp-cr::after {
   color: #8a3a3a;
 }
-.dacm-thumbs {
+
+/* ============================================================
+   MINIATURAS — barra horizontal con scroll
+   ============================================================ */
+.grsp-thumbs {
   position: absolute;
   bottom: 19px;
   left: 20px;
@@ -346,14 +392,16 @@
   -webkit-mask-image: linear-gradient(to right, #000 90%, transparent 100%);
   mask-image: linear-gradient(to right, #000 90%, transparent 100%);
 }
-.dacm-thumbs::-webkit-scrollbar{height: 4px}
-.dacm-thumbs::-webkit-scrollbar-track{background: #1a1a1a}
-.dacm-thumbs::-webkit-scrollbar-thumb {
+.grsp-thumbs::-webkit-scrollbar{height: 4px}
+.grsp-thumbs::-webkit-scrollbar-track{background: #1a1a1a}
+.grsp-thumbs::-webkit-scrollbar-thumb {
   background: var(--despmain3);
   border-radius: 2px;
 }
-.dacm-thumb-input{display: none}
-.dacm-thumb {
+
+.grsp-thumb-input{display: none}
+
+.grsp-thumb {
   position: relative;
   width: 70px;
   height: 50px;
@@ -366,60 +414,72 @@
   filter: grayscale(70%);
   transition: all .35s ease;
 }
-.dacm-thumb:hover {opacity: 1;filter: grayscale(0%);border-color: #636363;transform: translateY(-3px) scale(1.08);box-shadow: 0 0 8px rgb(65 65 65 / 71%);}
-.dacm-thumb[for="dacm-bg1"]{background-image: var(--bg1)}
-.dacm-thumb[for="dacm-bg2"]{background-image: var(--bg2)}
-.dacm-thumb[for="dacm-bg3"]{background-image: var(--bg3)}
-.dacm-thumb[for="dacm-bg4"]{background-image: var(--bg4)}
-.dacm-thumb[for="dacm-bg5"]{background-image: var(--bg5)}
-.dacm-thumb[for="dacm-bg6"]{background-image: var(--bg6)}
-.dacm-thumb[for="dacm-bg7"]{background-image: var(--bg7)}
-.dacm-thumb[for="dacm-bg8"]{background-image: var(--bg8)}
-.dacm-thumb[for="dacm-bg9"]{background-image: var(--bg9)}
-.dacm-thumb[for="dacm-bg10"]{background-image: var(--bg10)}
-.dacm-thumb[for="dacm-bg11"]{background-image: var(--bg11)}
-.dacm-thumb[for="dacm-bg12"]{background-image: var(--bg12)}
-.dacm-thumb[for="dacm-bg13"]{background-image: var(--bg13)}
-.dacm-thumb[for="dacm-bg14"]{background-image: var(--bg14)}
-.dacm-thumb[for="dacm-bg15"]{background-image: var(--bg15)}
-.dacm-thumb[for="dacm-bg16"]{background-image: var(--bg16)}
-.dacm-thumb[for="dacm-bg17"]{background-image: var(--bg17)}
-.dacm-thumb[for="dacm-bg18"]{background-image: var(--bg18)}
-.dacm-thumb[for="dacm-bg19"]{background-image: var(--bg19)}
-.dacm-thumb[for="dacm-bg20"]{background-image: var(--bg20)}
-.dacm-thumb[for="dacm-bg21"]{background-image: var(--bg21)}
-.dacm-thumb[for="dacm-bg22"]{background-image: var(--bg22)}
-.dacm-thumb[for="dacm-bg23"]{background-image: var(--bg23)}
-.dacm-thumb[for="dacm-bg24"]{background-image: var(--bg24)}
-.dacm-thumb[for="dacm-bg25"]{background-image: var(--bg25)}     
+.grsp-thumb:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  border-color: #636363;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 0 8px rgb(65 65 65 / 71%);
+}
 
-#dacm-bg1:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg1"],
-#dacm-bg2:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg2"],
-#dacm-bg3:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg3"],
-#dacm-bg4:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg4"],
-#dacm-bg5:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg5"],
-#dacm-bg6:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg6"],
-#dacm-bg7:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg7"],
-#dacm-bg8:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg8"],
-#dacm-bg9:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg9"],
-#dacm-bg10:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg10"],
-#dacm-bg11:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg11"],
-#dacm-bg12:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg12"],
-#dacm-bg13:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg13"],
-#dacm-bg14:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg14"],
-#dacm-bg15:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg15"],
-#dacm-bg16:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg16"],
-#dacm-bg17:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg17"],
-#dacm-bg18:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg18"],
-#dacm-bg19:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg19"],
-#dacm-bg20:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg20"],
-#dacm-bg21:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg21"],
-#dacm-bg22:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg22"],
-#dacm-bg23:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg23"],
-#dacm-bg24:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg24"],
-#dacm-bg25:checked ~ .dacm-thumbs .dacm-thumb[for="dacm-bg25"]{opacity: 1;filter: grayscale(0%);border-color: #696969}
+/* Cada thumb lee su variable del padre */
+.grsp-thumb[for="grsp-bg1"]{background-image: var(--bg1)}
+.grsp-thumb[for="grsp-bg2"]{background-image: var(--bg2)}
+.grsp-thumb[for="grsp-bg3"]{background-image: var(--bg3)}
+.grsp-thumb[for="grsp-bg4"]{background-image: var(--bg4)}
+.grsp-thumb[for="grsp-bg5"]{background-image: var(--bg5)}
+.grsp-thumb[for="grsp-bg6"]{background-image: var(--bg6)}
+.grsp-thumb[for="grsp-bg7"]{background-image: var(--bg7)}
+.grsp-thumb[for="grsp-bg8"]{background-image: var(--bg8)}
+.grsp-thumb[for="grsp-bg9"]{background-image: var(--bg9)}
+.grsp-thumb[for="grsp-bg10"]{background-image: var(--bg10)}
+.grsp-thumb[for="grsp-bg11"]{background-image: var(--bg11)}
+.grsp-thumb[for="grsp-bg12"]{background-image: var(--bg12)}
+.grsp-thumb[for="grsp-bg13"]{background-image: var(--bg13)}
+.grsp-thumb[for="grsp-bg14"]{background-image: var(--bg14)}
+.grsp-thumb[for="grsp-bg15"]{background-image: var(--bg15)}
+.grsp-thumb[for="grsp-bg16"]{background-image: var(--bg16)}
+.grsp-thumb[for="grsp-bg17"]{background-image: var(--bg17)}
+.grsp-thumb[for="grsp-bg18"]{background-image: var(--bg18)}
+.grsp-thumb[for="grsp-bg19"]{background-image: var(--bg19)}
+.grsp-thumb[for="grsp-bg20"]{background-image: var(--bg20)}
+.grsp-thumb[for="grsp-bg21"]{background-image: var(--bg21)}
+.grsp-thumb[for="grsp-bg22"]{background-image: var(--bg22)}
+.grsp-thumb[for="grsp-bg23"]{background-image: var(--bg23)}
+.grsp-thumb[for="grsp-bg24"]{background-image: var(--bg24)}
+.grsp-thumb[for="grsp-bg25"]{background-image: var(--bg25)}     
 
-.dacm-tip-box {
+/* Thumb activo */
+#grsp-bg1:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg1"],
+#grsp-bg2:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg2"],
+#grsp-bg3:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg3"],
+#grsp-bg4:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg4"],
+#grsp-bg5:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg5"],
+#grsp-bg6:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg6"],
+#grsp-bg7:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg7"],
+#grsp-bg8:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg8"],
+#grsp-bg9:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg9"],
+#grsp-bg10:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg10"],
+#grsp-bg11:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg11"],
+#grsp-bg12:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg12"],
+#grsp-bg13:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg13"],
+#grsp-bg14:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg14"],
+#grsp-bg15:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg15"],
+#grsp-bg16:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg16"],
+#grsp-bg17:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg17"],
+#grsp-bg18:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg18"],
+#grsp-bg19:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg19"],
+#grsp-bg20:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg20"],
+#grsp-bg21:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg21"],
+#grsp-bg22:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg22"],
+#grsp-bg23:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg23"],
+#grsp-bg24:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg24"],
+#grsp-bg25:checked ~ .grsp-thumbs .grsp-thumb[for="grsp-bg25"]{opacity: 1;filter: grayscale(0%);border-color: #696969}
+
+/* ============================================================
+   CAJA DE DESCRIPCIONES — panel dedicado fuera del thumbs
+   ============================================================ */
+.grsp-tip-box {
     position: absolute;
     bottom: 105px;
     left: 14px;
@@ -434,7 +494,7 @@
     overflow: hidden;
 }
 
-.dacm-tip {
+.grsp-tip {
     display: none;
     font-family: "Hind", sans-serif;
     font-size: 10px;
@@ -446,79 +506,90 @@
     max-width: 100%;
 }
 
-#dacm-bg1:checked ~ .dacm-tip-box .dacm-tip-1,
-#dacm-bg2:checked ~ .dacm-tip-box .dacm-tip-2,
-#dacm-bg3:checked ~ .dacm-tip-box .dacm-tip-3,
-#dacm-bg4:checked ~ .dacm-tip-box .dacm-tip-4,
-#dacm-bg5:checked ~ .dacm-tip-box .dacm-tip-5,
-#dacm-bg6:checked ~ .dacm-tip-box .dacm-tip-6,
-#dacm-bg7:checked ~ .dacm-tip-box .dacm-tip-7,
-#dacm-bg8:checked ~ .dacm-tip-box .dacm-tip-8,
-#dacm-bg9:checked ~ .dacm-tip-box .dacm-tip-9,
-#dacm-bg10:checked ~ .dacm-tip-box .dacm-tip-10,
-#dacm-bg11:checked ~ .dacm-tip-box .dacm-tip-11,
-#dacm-bg12:checked ~ .dacm-tip-box .dacm-tip-12,
-#dacm-bg13:checked ~ .dacm-tip-box .dacm-tip-13,
-#dacm-bg14:checked ~ .dacm-tip-box .dacm-tip-14,
-#dacm-bg15:checked ~ .dacm-tip-box .dacm-tip-15,
-#dacm-bg16:checked ~ .dacm-tip-box .dacm-tip-16,
-#dacm-bg17:checked ~ .dacm-tip-box .dacm-tip-17,
-#dacm-bg18:checked ~ .dacm-tip-box .dacm-tip-18,
-#dacm-bg19:checked ~ .dacm-tip-box .dacm-tip-19,
-#dacm-bg20:checked ~ .dacm-tip-box .dacm-tip-20,
-#dacm-bg21:checked ~ .dacm-tip-box .dacm-tip-21,
-#dacm-bg22:checked ~ .dacm-tip-box .dacm-tip-22,
-#dacm-bg23:checked ~ .dacm-tip-box .dacm-tip-23,
-#dacm-bg24:checked ~ .dacm-tip-box .dacm-tip-24, 
-#dacm-bg25:checked ~ .dacm-tip-box .dacm-tip-25 {display:block;animation:dacmFadeTip .35s ease}
+/* Mostrar la descripción según el input :checked */
+#grsp-bg1:checked ~ .grsp-tip-box .grsp-tip-1,
+#grsp-bg2:checked ~ .grsp-tip-box .grsp-tip-2,
+#grsp-bg3:checked ~ .grsp-tip-box .grsp-tip-3,
+#grsp-bg4:checked ~ .grsp-tip-box .grsp-tip-4,
+#grsp-bg5:checked ~ .grsp-tip-box .grsp-tip-5,
+#grsp-bg6:checked ~ .grsp-tip-box .grsp-tip-6,
+#grsp-bg7:checked ~ .grsp-tip-box .grsp-tip-7,
+#grsp-bg8:checked ~ .grsp-tip-box .grsp-tip-8,
+#grsp-bg9:checked ~ .grsp-tip-box .grsp-tip-9,
+#grsp-bg10:checked ~ .grsp-tip-box .grsp-tip-10,
+#grsp-bg11:checked ~ .grsp-tip-box .grsp-tip-11,
+#grsp-bg12:checked ~ .grsp-tip-box .grsp-tip-12,
+#grsp-bg13:checked ~ .grsp-tip-box .grsp-tip-13,
+#grsp-bg14:checked ~ .grsp-tip-box .grsp-tip-14,
+#grsp-bg15:checked ~ .grsp-tip-box .grsp-tip-15,
+#grsp-bg16:checked ~ .grsp-tip-box .grsp-tip-16,
+#grsp-bg17:checked ~ .grsp-tip-box .grsp-tip-17,
+#grsp-bg18:checked ~ .grsp-tip-box .grsp-tip-18,
+#grsp-bg19:checked ~ .grsp-tip-box .grsp-tip-19,
+#grsp-bg20:checked ~ .grsp-tip-box .grsp-tip-20,
+#grsp-bg21:checked ~ .grsp-tip-box .grsp-tip-21,
+#grsp-bg22:checked ~ .grsp-tip-box .grsp-tip-22,
+#grsp-bg23:checked ~ .grsp-tip-box .grsp-tip-23,
+#grsp-bg24:checked ~ .grsp-tip-box .grsp-tip-24, 
+#grsp-bg25:checked ~ .grsp-tip-box .grsp-tip-25 {display:block;animation:grspFadeTip .35s ease}
 
-@keyframes dacmFadeTip {from{opacity: 0; transform: translateY(4px)}to{opacity: 1; transform: translateY(0)}}
+@keyframes grspFadeTip {
+  from{opacity: 0; transform: translateY(4px)}to{opacity: 1; transform: translateY(0)}
+}
 
-.dacm-tabs-wrap {
-position: absolute;
-    top: 200px;
-    right: 21px;
-    width: 270px;
-    height: 275px;
-    background: rgb(24 24 24 / 60%);
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-    padding: 6px 12px 8px;
-    box-sizing: border-box;
-    border: solid 1px #1f1f1f;
+/* ============================================================
+   TABS — CSS puro
+   ============================================================ */
+.grsp-tabs-wrap {
+  position: absolute;
+  top: 200px;
+  right: 19px;
+  width: 240px;
+  height: 275px;
+  background: rgb(24 24 24 / 60%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 12px 8px;
+  box-sizing: border-box;
+  border: solid 1px #1f1f1f;
 }
-.dacm-tab-input{display: none}
-.dacm-tabs {display: flex;gap: 4px;margin-bottom: 4px;flex-shrink: 0;}
-.dacm-tab-btn {
-    background: transparent;
-    border: 1px solid #2a2a2a;
-    color: #888;
-    padding: 2px 7px;
-    cursor: pointer;
-    font-family: "Hind", sans-serif;
-    font-size: 8px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all .3s ease;
-    user-select: none;
+.grsp-tab-input{display: none}
+.grsp-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
 }
-.dacm-tab-btn:nth-child(1)::before{content: 'Información'}
-.dacm-tab-btn:nth-child(2)::before{content: 'Historia'}
-.dacm-tab-btn:nth-child(3)::before{content: 'Reglamento'}
-.dacm-tab-btn:hover {
+.grsp-tab-btn {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: "Hind", sans-serif;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all .3s ease;
+  user-select: none;
+}
+.grsp-tab-btn:nth-child(1)::before{content: 'Info'}
+.grsp-tab-btn:nth-child(2)::before{content: 'Historia'}
+.grsp-tab-btn:nth-child(3)::before{content: 'Reglamento'}
+.grsp-tab-btn:hover {
   background: rgb(255 255 255 / 14%);
   border-color: #939393;
   color: #fff;
 }
-#dacm-tab1:checked ~ .dacm-tabs .dacm-tab-btn[for="dacm-tab1"],
-#dacm-tab2:checked ~ .dacm-tabs .dacm-tab-btn[for="dacm-tab2"],
-#dacm-tab3:checked ~ .dacm-tabs .dacm-tab-btn[for="dacm-tab3"] {
+#grsp-tab1:checked ~ .grsp-tabs .grsp-tab-btn[for="grsp-tab1"],
+#grsp-tab2:checked ~ .grsp-tabs .grsp-tab-btn[for="grsp-tab2"],
+#grsp-tab3:checked ~ .grsp-tabs .grsp-tab-btn[for="grsp-tab3"] {
   background: rgb(255 255 255 / 14%);
   border-color: #939393;
   color: #fff;
 }
-.dacm-tab-content {
+.grsp-tab-content {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
@@ -526,13 +597,13 @@ position: absolute;
   scrollbar-width: thin;
   scrollbar-color: #454545 #1a1a1a;
 }
-.dacm-tab-content::-webkit-scrollbar{width: 4px}
-.dacm-tab-content::-webkit-scrollbar-track{background: #1a1a1a}
-.dacm-tab-content::-webkit-scrollbar-thumb {
+.grsp-tab-content::-webkit-scrollbar{width: 4px}
+.grsp-tab-content::-webkit-scrollbar-track{background: #1a1a1a}
+.grsp-tab-content::-webkit-scrollbar-thumb {
   background: #494949;
   border-radius: 2px;
 }
-.dacm-tab-pane {
+.grsp-tab-pane {
   display: none;
   color: #b0b0b0;
   font-family: "Hind", sans-serif;
@@ -542,14 +613,14 @@ position: absolute;
   margin-top: 10px;
   text-transform: uppercase;
 }
-#dacm-tab1:checked ~ .dacm-tab-content .dacm-pane-1,
-#dacm-tab2:checked ~ .dacm-tab-content .dacm-pane-2,
-#dacm-tab3:checked ~ .dacm-tab-content .dacm-pane-3 {
+#grsp-tab1:checked ~ .grsp-tab-content .grsp-pane-1,
+#grsp-tab2:checked ~ .grsp-tab-content .grsp-pane-2,
+#grsp-tab3:checked ~ .grsp-tab-content .grsp-pane-3 {
   display: block;
-  animation: dacmFadeTab .4s ease;
+  animation: grspFadeTab .4s ease;
 }
-.dacm-tab-pane p{margin: 0 0 6px 0}
-@keyframes dacmFadeTab {
+.grsp-tab-pane p{margin: 0 0 6px 0}
+@keyframes grspFadeTab {
   from{opacity: 0; transform: translateY(4px)}
   to  {opacity: 1; transform: translateY(0)}
 }

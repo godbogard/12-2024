@@ -147,11 +147,11 @@ content: '';
 }
 .grsp-desp-na{
   font-family:'Baskervville SC', serif;
-  font-size:28px;
+  font-size:30px;
   font-weight:400;
   font-style:normal;
   margin:0;
-  top:8px;
+  top:25px;
   position:absolute;
   text-shadow:0 0 5px rgba(var(--despmain1));
 }
@@ -280,7 +280,7 @@ content: '';
 .grsp-cr {
   position: absolute;
   right:10px;
-  bottom:-1px;
+  bottom:3px;
   z-index: 11;
   display: flex;
   align-items: center;

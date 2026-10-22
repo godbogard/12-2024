@@ -114,6 +114,7 @@ content: '';
   pointer-events: none;
   background-size: contain;
   background-repeat: no-repeat;
+  filter: drop-shadow(2px 4px 6px black);
 }
 .grsp-desp-meta{
     position: absolute;

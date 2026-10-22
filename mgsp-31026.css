@@ -1,5 +1,5 @@
  @import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Hind:wght@300;400;500;600;700&family=Poiret+One&display=swap');
-:root{--despmain:#1e1e1e;--despmain1:30, 30, 30, 0.8;--despmain2:30, 30, 30, 0.4;--despmain3:#181818;--despmain4:#0f0f0f;--despmain6:#552121;}
+:root{--despmain:#1e1e1e;--despmain1:30, 30, 30, 0.8;--despmain2:30, 30, 30, 0.4;--despmain3:#181818;--despmain4:#0f0f0f;--despmain5:#ffffff;--despmain6:#552121;}
 
 .grsp-desp{
   position:relative;

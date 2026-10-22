@@ -409,8 +409,8 @@ position: absolute;
 .grsp-tip-box {
     position: absolute;
     bottom: 105px;
-    left: 14px;
-    width: 455px;
+    left: 13px;
+    width: 495px;
     height: 205px;
     z-index: 15;
     display: flex;

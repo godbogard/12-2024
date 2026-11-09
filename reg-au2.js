@@ -17,7 +17,7 @@ function enviarMensaje(form) {
         var nombreConLink = prolink && nombre
             ? '<a href="' + prolink + '">' + nombre + '</a>'
             : (nombre || ('<a href="' + prolink + '">/u' + numUser + '</a>'));
-        primeraLinea = "[code] " + nombreConLink + "[/code]\n";
+        primeraLinea = "[code] " + nombreConLink + "[/code]\n \n";
     }
 
     // --- Comentario extra al inicio (opcional, sin etiqueta) ---

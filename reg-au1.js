@@ -20,10 +20,10 @@ function enviarMensaje(form) {
         primeraLinea = "[code] " + nombreConLink + "[/code]<br>";
     }
 
-    // --- Comentario extra al inicio (opcional) ---
+    // --- Comentario extra al inicio (opcional, sin etiqueta) ---
     var comentario = (form.comentario.value || "").trim();
     var bloqueComentario = comentario
-        ? + comentario + "<br><br>"
+        ? comentario + "<br><br>"
         : "";
 
     // --- Función auxiliar: devuelve el bloque solo si hay valor ---

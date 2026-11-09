@@ -7,24 +7,28 @@ jQuery(function () {
 });
 
 function enviarMensaje(form) {
-    // Construir el enlace al perfil a partir del número de usuario
+    // --- Primera línea: solo si hay número de usuario O nombre ---
     var numUser = (form.usernum.value || "").trim().replace(/[^0-9]/g, "");
+    var nombre  = (form.charname.value || "").trim();
     var prolink = numUser ? "/u" + numUser : "";
 
-    // Nombre con enlace (si hay número de usuario) o solo texto
-    var nombreConLink = prolink
-        ? '<a href="' + prolink + '">' + form.charname.value + '</a>'
-        : form.charname.value;
+    var primeraLinea = "";
+    if (prolink || nombre) {
+        var nombreConLink = prolink && nombre
+            ? '<a href="' + prolink + '">' + nombre + '</a>'
+            : (nombre || ('<a href="' + prolink + '">/u' + numUser + '</a>'));
+        primeraLinea = "[code] " + nombreConLink + "[/code]<br>";
+    }
 
-    // Función auxiliar: devuelve el bloque "[b]Etiqueta:[/b] valor" solo si hay valor
+    // --- Función auxiliar: devuelve el bloque solo si hay valor ---
     function campo(etiqueta, valor) {
         valor = (valor || "").trim();
         return valor ? "[b]" + etiqueta + ":[/b] " + valor + "<br>" : "";
     }
 
-    // Construir el mensaje (nota: el foro usa [code] solo para el enlace del personaje)
+    // --- Construir el mensaje ---
     var txt_message =
-        "[code] " + nombreConLink + "[/code]<br>" +
+        primeraLinea +
         campo("Enlace a la ficha del personaje", form.ficha.value) +
         campo("Enlace a la solicitud de estadísticas", form.stats.value) +
         campo("Grupo", form.chargrup.value) +
@@ -37,7 +41,7 @@ function enviarMensaje(form) {
 
     form.message.value = txt_message;
 
-    // Copiar auth[] y tokens del formulario oculto
+    // --- Copiar auth[] y tokens del formulario oculto ---
     jQuery("#hidden").find("input[name='auth[]']").each(function (index) {
         if (index == 0) auth1 = jQuery(this).attr("value");
         if (index == 1) auth2 = jQuery(this).attr("value");

@@ -23,7 +23,7 @@ function enviarMensaje(form) {
     // --- Comentario extra al inicio (opcional) ---
     var comentario = (form.comentario.value || "").trim();
     var bloqueComentario = comentario
-        ? "[b]Comentario:[/b] " + comentario + "<br><br>"
+        ? + comentario + "<br><br>"
         : "";
 
     // --- Función auxiliar: devuelve el bloque solo si hay valor ---

@@ -20,6 +20,12 @@ function enviarMensaje(form) {
         primeraLinea = "[code] " + nombreConLink + "[/code]<br>";
     }
 
+    // --- Comentario extra al inicio (opcional) ---
+    var comentario = (form.comentario.value || "").trim();
+    var bloqueComentario = comentario
+        ? "[b]Comentario:[/b] " + comentario + "<br><br>"
+        : "";
+
     // --- Función auxiliar: devuelve el bloque solo si hay valor ---
     function campo(etiqueta, valor) {
         valor = (valor || "").trim();
@@ -28,6 +34,7 @@ function enviarMensaje(form) {
 
     // --- Construir el mensaje ---
     var txt_message =
+        bloqueComentario +
         primeraLinea +
         campo("Enlace a la ficha del personaje", form.ficha.value) +
         campo("Enlace a la solicitud de estadísticas", form.stats.value) +

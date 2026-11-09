@@ -2,7 +2,7 @@ var auth3;
 var auth4;
 
 jQuery(function () {
-    var id_tema_tramites = 14; // <-- CAMBIA esto por el ID del tema de trámites
+    var id_tema_tramites = 15; // <-- CAMBIA esto por el ID del tema de trámites
     jQuery("#hidden-tramites").load("/post?t=" + id_tema_tramites + "&mode=reply form[action='/post']");
 });
 

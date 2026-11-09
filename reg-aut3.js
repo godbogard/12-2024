@@ -1,4 +1,3 @@
-<script type="text/javascript">
 var auth1;
 var auth2;
 
@@ -59,4 +58,3 @@ function enviarMensaje(form) {
     jQuery("input#lt1").attr("value", jQuery("#hidden").find("input[name='lt']").attr('value'));
     jQuery("input#mt").attr("value", jQuery("#hidden").find("input[name='t']").attr('value'));
 }
-</script>

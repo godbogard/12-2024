@@ -15,19 +15,22 @@ jQuery(function () {
         jQuery("#statvida").val(total > 0 ? (total * 2) : "");
     });
 
-    // --- Mostrar/ocultar razones según el tipo de trámite ---
+    // --- Mostrar/ocultar razones y checks "Nuevo" según el tipo de trámite ---
     function toggleRazones() {
         var tipo = jQuery("#statstipo").val();
         if (tipo === "Registrar por primera vez") {
             jQuery("#stats-razones-wrapper").hide();
             jQuery("#stats-razones .stats-razon-texto").val("");
             jQuery("#stats-razones .stats-link-url").val("");
-            // Quitar required para que no bloquee el envío
             jQuery("#stats-razones .stats-razon-texto").prop("required", false);
+            // Ocultar checks "Nuevo" y desmarcarlos
+            jQuery(".stats-check-nuevo").hide();
+            jQuery(".stats-check-nuevo input[type='checkbox']").prop("checked", false);
         } else {
             jQuery("#stats-razones-wrapper").show();
-            // Restaurar required en la primera razón
             jQuery("#stats-razones .stats-razon-bloque:first .stats-razon-texto").prop("required", true);
+            // Mostrar checks "Nuevo" de nuevo
+            jQuery(".stats-check-nuevo").show();
         }
     }
     jQuery("#statstipo").on("change", toggleRazones);
@@ -171,11 +174,11 @@ function enviarStats(form) {
         return valor ? "[b]" + etiqueta + ":[/b] " + valor + "\n" : "";
     }
 
-    // --- Función auxiliar: stat con negrita si el checkbox está marcado ---
-    function statLinea(etiqueta, valor, checkboxId) {
+    // --- Función auxiliar: stat con negrita si el checkbox está marcado O si es primera vez ---
+    function statLinea(etiqueta, valor, checkboxId, forzarNuevo) {
         valor = (valor || "").trim();
         if (!valor) return "";
-        var esNuevo = jQuery("#" + checkboxId).is(":checked");
+        var esNuevo = forzarNuevo || jQuery("#" + checkboxId).is(":checked");
         var valorFinal = esNuevo ? "[b]" + valor + "[/b]" : valor;
         return etiqueta + ": " + valorFinal + "\n";
     }
@@ -190,10 +193,10 @@ function enviarStats(form) {
 
     // --- Construir el bloque de estadísticas ---
     var bloqueStats =
-        statLinea("Magia", form.statmagia.value, "nuevo_magia") +
-        statLinea("Intelecto", form.statint.value, "nuevo_int") +
-        statLinea("Físico", form.statfis.value, "nuevo_fis") +
-        statLinea("Social", form.statsoc.value, "nuevo_soc");
+        statLinea("Magia", form.statmagia.value, "nuevo_magia", esPrimeraVez) +
+        statLinea("Intelecto", form.statint.value, "nuevo_int", esPrimeraVez) +
+        statLinea("Físico", form.statfis.value, "nuevo_fis", esPrimeraVez) +
+        statLinea("Social", form.statsoc.value, "nuevo_soc", esPrimeraVez);
 
     // --- Puntos de vida: etiqueta SIN negrita, valor en negrita ---
     var vida = (form.statvida.value || "").trim();

@@ -14,6 +14,24 @@ jQuery(function () {
         var total = m + i + f + s;
         jQuery("#statvida").val(total > 0 ? (total * 2) : "");
     });
+
+    // --- Mostrar/ocultar razones según el tipo de trámite ---
+    function toggleRazones() {
+        var tipo = jQuery("#statstipo").val();
+        if (tipo === "Registrar por primera vez") {
+            jQuery("#stats-razones-wrapper").hide();
+            jQuery("#stats-razones .stats-razon-texto").val("");
+            jQuery("#stats-razones .stats-link-url").val("");
+            // Quitar required para que no bloquee el envío
+            jQuery("#stats-razones .stats-razon-texto").prop("required", false);
+        } else {
+            jQuery("#stats-razones-wrapper").show();
+            // Restaurar required en la primera razón
+            jQuery("#stats-razones .stats-razon-bloque:first .stats-razon-texto").prop("required", true);
+        }
+    }
+    jQuery("#statstipo").on("change", toggleRazones);
+    toggleRazones();
 });
 
 // --- Nombres automáticos para los links: Uno...Seis ---
@@ -24,19 +42,16 @@ function nombreLinkStats(index) {
 
 // --- Reasignar títulos de razones y placeholders de links ---
 function reasignarStats() {
-    // Títulos de razones
     jQuery("#stats-razones .stats-razon-bloque").each(function (i) {
         jQuery(this).find(".stats-razon-titulo").text("Razón " + (i + 1));
     });
 
-    // Placeholders de links dentro de cada razón
     jQuery("#stats-razones .stats-razon-bloque").each(function () {
         jQuery(this).find(".stats-link-row").each(function (j) {
             jQuery(this).find(".stats-link-url").attr("placeholder", "Link " + nombreLinkStats(j) + " (https://...)");
         });
     });
 
-    // Ocultar botón + de razón si ya hay 3 bloques
     var totalRazones = jQuery("#stats-razones .stats-razon-bloque").length;
     if (totalRazones >= 3) {
         jQuery("#stats-razones .stats-razon-bloque .stats-razon-header .tram-add").hide();
@@ -44,7 +59,6 @@ function reasignarStats() {
         jQuery("#stats-razones .stats-razon-bloque .stats-razon-header .tram-add").show();
     }
 
-    // Ocultar botón + de links si ya hay 6 en ese bloque
     jQuery("#stats-razones .stats-razon-bloque").each(function () {
         var totalLinks = jQuery(this).find(".stats-link-row").length;
         if (totalLinks >= 6) {
@@ -58,7 +72,7 @@ function reasignarStats() {
 // --- Añadir un bloque de razón nuevo ---
 function agregarRazonStats(boton) {
     var contenedor = document.getElementById("stats-razones");
-    if (jQuery("#stats-razones .stats-razon-bloque").length >= 3) return; // máximo 3 razones
+    if (jQuery("#stats-razones .stats-razon-bloque").length >= 3) return;
 
     var bloque = document.createElement("div");
     bloque.className = "stats-razon-bloque";
@@ -89,7 +103,7 @@ function eliminarRazonStats(boton) {
 function agregarLinkStats(boton) {
     var bloque = boton.closest(".stats-razon-bloque");
     var contenedor = bloque.querySelector(".stats-links");
-    if (contenedor.querySelectorAll(".stats-link-row").length >= 6) return; // máximo 6 links
+    if (contenedor.querySelectorAll(".stats-link-row").length >= 6) return;
 
     var fila = document.createElement("div");
     fila.className = "stats-link-row";
@@ -123,11 +137,13 @@ function enviarStats(form) {
         return false;
     }
 
+    var esPrimeraVez = (tipo === "Registrar por primera vez");
+
     // --- Recoger razones (cada bloque: texto + links) ---
     var razones = [];
     jQuery("#stats-razones .stats-razon-bloque").each(function () {
         var texto = jQuery(this).find(".stats-razon-texto").val().trim();
-        if (!texto) return; // ignorar bloques vacíos
+        if (!texto) return;
 
         var links = [];
         jQuery(this).find(".stats-link-row").each(function (j) {
@@ -144,7 +160,7 @@ function enviarStats(form) {
         razones.push(linea);
     });
 
-    if (razones.length === 0) {
+    if (!esPrimeraVez && razones.length === 0) {
         alert("Por favor, escribe al menos una razón.");
         return false;
     }
@@ -164,11 +180,13 @@ function enviarStats(form) {
         return etiqueta + ": " + valorFinal + "\n";
     }
 
-    // --- Construir bloque de razones ---
+    // --- Construir bloque de razones (solo si NO es primera vez) ---
     var bloqueRazones = "";
-    razones.forEach(function (r, i) {
-        bloqueRazones += "[b]Razón " + (i + 1) + ":[/b] " + r + "\n";
-    });
+    if (!esPrimeraVez) {
+        razones.forEach(function (r, i) {
+            bloqueRazones += "[b]Razón " + (i + 1) + ":[/b] " + r + "\n";
+        });
+    }
 
     // --- Construir el bloque de estadísticas ---
     var bloqueStats =
@@ -177,7 +195,7 @@ function enviarStats(form) {
         statLinea("Físico", form.statfis.value, "nuevo_fis") +
         statLinea("Social", form.statsoc.value, "nuevo_soc");
 
-    // --- Puntos de vida: etiqueta SIN negrita, valor en negrita, salto de línea previo ---
+    // --- Puntos de vida: etiqueta SIN negrita, valor en negrita ---
     var vida = (form.statvida.value || "").trim();
     var bloqueVida = vida ? "\nPuntos de vida: [b]" + vida + "[/b]\n" : "";
 
@@ -186,7 +204,8 @@ function enviarStats(form) {
         campo("Nombre del personaje", nombre) +
         campo("Tipo de trámite", tipo) +
         bloqueRazones +
-        "\n[b]Estadísticas actualizadas:[/b]\n" +
+        (esPrimeraVez ? "" : "\n") +
+        "[b]Estadísticas actualizadas:[/b]\n" +
         bloqueStats +
         bloqueVida;
 

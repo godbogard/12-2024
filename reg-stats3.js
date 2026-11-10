@@ -2,7 +2,7 @@ var auth5;
 var auth6;
 
 jQuery(function () {
-    var id_tema_stats = 15; // <-- CAMBIA esto por el ID del tema de estadísticas
+    var id_tema_stats = 16; // <-- CAMBIA esto por el ID del tema de estadísticas
     jQuery("#hidden-stats").load("/post?t=" + id_tema_stats + "&mode=reply form[action='/post']");
 
     // --- Cálculo automático de puntos de vida ---

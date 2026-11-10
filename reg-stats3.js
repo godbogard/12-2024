@@ -16,9 +16,9 @@ jQuery(function () {
     });
 });
 
-// --- Nombres automáticos para los links: Uno, Dos, Tres ---
+// --- Nombres automáticos para los links: Uno...Seis ---
 function nombreLinkStats(index) {
-    var nombres = ["Uno", "Dos", "Tres"];
+    var nombres = ["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis"];
     return nombres[index] || ("Link " + (index + 1));
 }
 
@@ -44,10 +44,10 @@ function reasignarStats() {
         jQuery("#stats-razones .stats-razon-bloque .stats-razon-header .tram-add").show();
     }
 
-    // Ocultar botón + de links si ya hay 3 en ese bloque
+    // Ocultar botón + de links si ya hay 6 en ese bloque
     jQuery("#stats-razones .stats-razon-bloque").each(function () {
         var totalLinks = jQuery(this).find(".stats-link-row").length;
-        if (totalLinks >= 3) {
+        if (totalLinks >= 6) {
             jQuery(this).find(".stats-links .tram-add").hide();
         } else {
             jQuery(this).find(".stats-links .tram-add").show();
@@ -71,7 +71,7 @@ function agregarRazonStats(boton) {
         '<div class="stats-links">' +
           '<div class="stats-link-row">' +
             '<input class="labelclas0 stats-link-url" size="30" placeholder="https://..." />' +
-            '<button type="button" class="tram-add" onclick="agregarLinkStats(this)" title="Añadir otro link (máx. 3)">+</button>' +
+            '<button type="button" class="tram-add" onclick="agregarLinkStats(this)" title="Añadir otro link (máx. 6)">+</button>' +
           '</div>' +
         '</div>';
     contenedor.appendChild(bloque);
@@ -89,7 +89,7 @@ function eliminarRazonStats(boton) {
 function agregarLinkStats(boton) {
     var bloque = boton.closest(".stats-razon-bloque");
     var contenedor = bloque.querySelector(".stats-links");
-    if (contenedor.querySelectorAll(".stats-link-row").length >= 3) return; // máximo 3 links
+    if (contenedor.querySelectorAll(".stats-link-row").length >= 6) return; // máximo 6 links
 
     var fila = document.createElement("div");
     fila.className = "stats-link-row";
@@ -125,7 +125,7 @@ function enviarStats(form) {
 
     // --- Recoger razones (cada bloque: texto + links) ---
     var razones = [];
-    jQuery("#stats-razones .stats-razon-bloque").each(function (i) {
+    jQuery("#stats-razones .stats-razon-bloque").each(function () {
         var texto = jQuery(this).find(".stats-razon-texto").val().trim();
         if (!texto) return; // ignorar bloques vacíos
 
@@ -177,16 +177,16 @@ function enviarStats(form) {
         statLinea("Físico", form.statfis.value, "nuevo_fis") +
         statLinea("Social", form.statsoc.value, "nuevo_soc");
 
-    // --- Puntos de vida con [b] y salto de línea previo ---
+    // --- Puntos de vida: etiqueta SIN negrita, valor en negrita, salto de línea previo ---
     var vida = (form.statvida.value || "").trim();
-    var bloqueVida = vida ? "\n[b]Puntos de vida:[/b] [b]" + vida + "[/b]\n" : "";
+    var bloqueVida = vida ? "\nPuntos de vida: [b]" + vida + "[/b]\n" : "";
 
     // --- Construir el mensaje ---
     var txt_message =
         campo("Nombre del personaje", nombre) +
         campo("Tipo de trámite", tipo) +
         bloqueRazones +
-        "[b]Estadísticas actualizadas:[/b]\n" +
+        "\n[b]Estadísticas actualizadas:[/b]\n" +
         bloqueStats +
         bloqueVida;
 
